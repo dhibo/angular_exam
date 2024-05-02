@@ -1,0 +1,9 @@
+<h2>
+    Projects</h2>
+
+
+<ul class="list-group" *ngFor="let p of listProjects">
+    <li class="list-group-item"> id : {{p.id}} <br>  Title : {{p.title}} <br>  description : {{p.description}}
+        <button class="btn btn-primary" [routerLink]="['/addtask',p.id]">Add Task</button>
+    </li>
+</ul>

@@ -1,0 +1,28 @@
+
+<form [formGroup]="registreForm">
+
+
+    <div class=" form-group ">
+        <label> Nom d'utilisateur :</label>
+        <input type="text " formControlName="ln " class="form-control ">
+    </div>
+    <div *ngIf="registreForm.controls['ln'].errors &&
+    registreForm.get('ln')?.touched">
+        <div *ngIf="registreForm.controls['ln'].hasError('required')">
+            required
+        </div>
+        <div *ngIf="registreForm.controls['ln'].hasError('minlength')">
+            Message minLength
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label> adress</label>
+        <input type="text " formControlName="ad " class="form-control ">
+    </div>
+    <div class="alert alert-danger " *ngIf="registreForm.controls[ 'ad'].invalid && registreForm.controls[ 'ad'].touched ">
+        le mot de passe doit avoir au moins 6 caractéres . le mot de passe soir commence avec un caractére majuscule .
+    </div>
+
+    <input class=" btn btn-info " type="submit "  value="Se connecter  " (click)="showLogin() " >
+</form>

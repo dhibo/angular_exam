@@ -1,0 +1,9 @@
+<h2>
+    Task</h2>
+
+
+<ul class="list-group" *ngFor="let t of listTasks">
+    <li class="list-group-item"> title : {{t.title}} <br>  date debut  : {{t.dateD}} <br>  date fin  : {{t.dateF}} <br> status : {{t.status}}  <br> {{t.porject}}
+        <button class="btn btn-primary" [routerLink]="['/addtask',t.id]">Details </button>
+    </li>
+</ul>
